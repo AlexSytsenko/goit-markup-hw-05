@@ -115,8 +115,21 @@ h3 {
 .site-nav .link:focus {
   color: var(--accent-link-color);
 }
-.site-nav .link.current {
+.link.current {
+  position: relative;
   color: var(--accent-link-color);
+}
+
+.link.current::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  left: 0;
+  margin-bottom: -1px;
+  border-radius: 2px;
+  background-color: var(--accent-link-color);
 }
 
 /*Address-nav*/
