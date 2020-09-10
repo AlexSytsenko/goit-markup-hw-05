@@ -54,7 +54,7 @@ h3 {
   padding-bottom: 94px;
 }
 
-.img {
+img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -630,11 +630,6 @@ h3 {
 
 .projects-item:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
-/*Убирает непонятный отступ межну контейнерами изображения и текстра*/
-.projects-card-container {
-  margin-bottom: -4px;
 }
 
 .projects-text-container {
