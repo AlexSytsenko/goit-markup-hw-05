@@ -5,6 +5,7 @@
   --white: #ffffff;
   --primary-background: #e5e5e5;
   --secondary-background: #f5f4fa;
+  --icon-gray: #afb1b8;
 
   --time: 250ms;
   --time-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -36,6 +37,12 @@ h3 {
   color: var(--text-color-black);
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .container {
   width: 1200px;
   margin-right: auto;
@@ -55,12 +62,6 @@ h3 {
   margin-left: auto;
   padding-top: 94px;
   padding-bottom: 94px;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
 
 /*Main nav*/
@@ -102,7 +103,7 @@ img {
   margin-right: 50px;
 }
 .link {
-  transition: 2000ms var(--time-function);
+  transition: var(--time) var(--time-function);
 }
 
 .site-nav .link {
@@ -110,7 +111,7 @@ img {
   padding-top: 32px;
   padding-bottom: 32px;
 
-  color: var(--secondary-text-color);
+  color: var(--text-color-black);
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -153,6 +154,8 @@ img {
 .address-nav .link {
   display: inline-flex;
   align-items: center;
+  padding-top: 32px;
+  padding-bottom: 32px;
   font-style: normal;
   color: var(--text-color-gray);
   font-weight: 500;
@@ -163,6 +166,9 @@ img {
 
 .icon-nav {
   margin-right: 10px;
+  fill: var(--text-color-gray);
+
+  transition: fill var(--time) var(--time-function);
 }
 
 .envelope {
@@ -178,7 +184,11 @@ img {
 .address-nav .link:hover,
 .address-nav .link:focus {
   color: var(--accent-link-color);
-  --color1: var(--accent-link-color);
+}
+
+.address-nav .link:hover .icon-nav,
+.address-nav .link:focus .icon-nav {
+  fill: var(--accent-link-color);
 }
 
 /*Hero*/
@@ -420,14 +430,16 @@ img {
   background-color: var(--accent-link-color);
 }*/
 
-.social-icon-link:hover,
-:focus .social-icon {
-  --color2: var(--white);
-}
-
 .social-icon {
   width: 20px;
   height: 20px;
+  fill: var(--icon-gray);
+  transition: fill var(--time) var(--time-function);
+}
+
+.social-icon-link:hover .social-icon,
+.social-icon-link:focus .social-icon {
+  fill: var(--white);
 }
 
 /*Regular customers*/
@@ -464,21 +476,21 @@ img {
 }
 
 .customers-link:hover,
-:focus {
+.customers-link:focus {
   border-color: var(--accent-link-color);
 }
 
-.castomers-icon {
-  --collor2: red;
+.customers-icon {
+  fill: var(--icon-gray);
 }
 
-.customers-link .castomers-icon {
-  transition: fill 2000ms var(--time-function);
+.customers-link .customers-icon {
+  transition: fill var(--time) var(--time-function);
 }
 
-.customers-link:hover,
-.customers-link:focus .castomers-icon {
-  --color2: var(--accent-link-color);
+.customers-link:hover .customers-icon,
+.customers-link:focus .customers-icon {
+  fill: var(--accent-link-color);
 }
 
 /*Footer*/
@@ -553,7 +565,7 @@ img {
 }
 
 .social-icon.join-icon {
-  --color2: var(--white);
+  fill: var(--white);
 }
 
 .social-icon-link:hover,
@@ -714,3 +726,5 @@ img {
   line-height: 1.87;
   color: var(--text-color-gray);
 }
+
+/*свг для конверта fill="var(--color1, #757575)"*/
