@@ -5,6 +5,9 @@
   --white: #ffffff;
   --primary-background: #e5e5e5;
   --secondary-background: #f5f4fa;
+
+  --time: 250ms;
+  --time-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* #188ce8 цвет фона кнопки Героя*/
@@ -97,6 +100,9 @@ img {
 
 .site-nav .item:not(:last-child) {
   margin-right: 50px;
+}
+.link {
+  transition: 2000ms var(--time-function);
 }
 
 .site-nav .link {
@@ -216,6 +222,12 @@ img {
   background-color: var(--accent-link-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  transition: background-color var(--time) var(--time-function);
+}
+
+.hero-button:hover,
+.hero-button:focus {
+  background-color: #188ce8;
 }
 
 /*Features*/
@@ -456,8 +468,16 @@ img {
   border-color: var(--accent-link-color);
 }
 
+.castomers-icon {
+  --collor2: red;
+}
+
+.customers-link .castomers-icon {
+  transition: fill 2000ms var(--time-function);
+}
+
 .customers-link:hover,
-:focus .castomers-icon {
+.customers-link:focus .castomers-icon {
   --color2: var(--accent-link-color);
 }
 
@@ -552,7 +572,7 @@ img {
   background-color: rgba(0, 0, 0, 0.2);
 
   opacity: 1;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--time) var(--time-function);
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -560,7 +580,7 @@ img {
 }
 
 .backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0.5);
+  transform: translate(-50%, -50%) scale(0.7);
 }
 
 .modal {
@@ -569,7 +589,7 @@ img {
   left: 50%;
 
   transform: translate(-50%, -50%) scale(1);
-  transition: 250ms translate(-50%, -50%) cubic-bezier(0.4, 0, 0.2, 1);
+  transition: var(--time) var(--time-function);
 
   width: 528px;
   height: 581px;
@@ -611,9 +631,11 @@ img {
   line-height: 1.62;
   letter-spacing: 0.03em;
   color: var(--text-color-black);
-  background: var(--secondary-background);
+  background-color: var(--secondary-background);
   border-radius: 4px;
   border: transparent;
+
+  transition: color var(--time) var(--time-function), background-color var(--time) var(--time-function);
 }
 
 .projects-selection-list .button:hover,
@@ -640,6 +662,34 @@ img {
 
 .projects-item:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.projects-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+  transition: transform var(--time) var(--time-function);
+}
+
+.projects-item:hover .projects-overlay {
+  transform: translatey(0%);
+}
+
+.projects-overlay-text {
+  margin: 0;
+  padding: 63px 24px;
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--white);
 }
 
 .projects-text-container {
